@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+<form action="/signup" method="POST">
+  <label for="name">NAME:</label><br />
+  <input type="text" id="name" name="name" required /><br />
+  <label for="email">Email:</label><br />
+  <input type="email" id="email" name="email" required /><br />
+  <label for="mobile">Mobile No.:</label><br />
+  <input type="number" id="mobile" name="mobile" required /><br />
+  <label for="loc">Locality:</label>
+  <select id="loc" name="locality">
+    <option value="Teliyarganj">Teliyarganj</option>
+    <option value="Katra-Market">Katra-Market</option>
+    <option value="Civil-Lines">Civil-Lines</option>
+    <option value="Phaphamau">Phaphamau</option>
+    <option value="Govindpur">Govindpur</option>
+  </select><br />
+  <label for="password">Password.:</label><br />
+  <input type="password" id="password" name="password" required /><br /><br />
+  <input type="submit" value="Submit" />
+</form>
+<%- include("partials/footer") %>

@@ -4,13 +4,19 @@
   "description": "vocal for local",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "author": "divy-saurav",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.0",
+    "config": "^3.3.7",
     "ejs": "^3.1.7",
     "express": "^4.17.3",
     "mongoose": "^6.3.1"
+  },
+  "devDependencies": {
+    "env": "^0.0.2",
+    "nodemon": "^2.0.15"
   }
 }
