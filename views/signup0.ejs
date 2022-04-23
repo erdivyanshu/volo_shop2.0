@@ -1,11 +1,13 @@
-<%- include("partials/header") %>
+<%- include("./partials/header") %>
+<div class="sign1">
+  <h3><center>REGISTER</center></h3>
 <form action="/signup" method="POST">
   <label for="name">NAME:</label><br />
   <input type="text" id="name" name="name" required /><br />
   <label for="email">Email:</label><br />
   <input type="email" id="email" name="email" required /><br />
   <label for="mobile">Mobile No.:</label><br />
-  <input type="number" id="mobile" name="mobile" required /><br />
+  <input type="text" id="mobile" name="mobile" required /><br /><br />
   <label for="loc">Locality:</label>
   <select id="loc" name="locality">
     <option value="Teliyarganj">Teliyarganj</option>
@@ -17,5 +19,10 @@
   <label for="password">Password.:</label><br />
   <input type="password" id="password" name="password" required /><br /><br />
   <input type="submit" value="Submit" />
+  
+    <p>Already have Account?<a href="/login0">LogIn</a></p>
+    
 </form>
-<%- include("partials/footer") %>
+
+</div>
+<%- include("./partials/footer") %>

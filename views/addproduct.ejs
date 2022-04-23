@@ -1,0 +1,18 @@
+<%- include("./partials/header") %>
+<div class="Add">
+  <h3><center>AddProduct</center></h3>
+<form action="/AddProduct" method="POST">
+ 
+  <label for="Pname">Product Name.:</label><br />
+  <input type="text" id="Pname" name="Pname" required /><br />
+   <label for="price">Price.:</label><br />
+  <input type="text" id="price" name="price" required /><br /><br />
+  <label for="ShopOwner">ShopOwner Name.:</label><br />
+  <input type="text" id="ShopOwner" name="ShopOwner" required /><br /><br />
+  <label for="dis">Add a description.:</label><br />
+  <input type="text" id="dis" name="dis" required /><br /><br />
+
+  <input type="submit" value="Submit" />
+</form>
+</div>
+<%- include("./partials/footer") %>

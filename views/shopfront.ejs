@@ -1,0 +1,54 @@
+<%- include("./partials/header") %>
+<style>
+   body{
+      background-image: url('../img/back-01.png');
+   }
+   .ftr{
+      display: inline-block;
+    position: absolute;
+    top:700px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: rgba(196, 159, 231, 0.893);
+    color: rgb(244, 233, 233);
+   }
+</style>
+ <div class="shopimg"><img src="https://source.unsplash.com/500x400/?market,shops"id = "shp" alt="shopImage">
+    <span>Shop Name/Address</span></div>
+    <div class="products">
+       <li><a href="#"><img src="https://source.unsplash.com/100x100/?tshirts,shirts" alt="products">Product1</a></li>
+       <li><a href="#"><img src="https://source.unsplash.com/100x100/?fruits,fruits" alt="products">Product2</a></li>
+       <li><a href="#"><img src="https://source.unsplash.com/100x100/?gadgets" alt="products">Product3</a></li>
+       <li><a href="#"><img src="https://source.unsplash.com/100x100/?crockery" alt="products">Product4</a></li>
+       <li><a href="#"><img src="https://source.unsplash.com/100x100/?shoes" alt="products">Product5</a></li>
+       <li><a href="#"><img src="https://source.unsplash.com/100x100/?groceries" alt="products">Product6</a></li>
+    </div>
+    <div class="products">
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?tshirts,shirts" alt="products">Product1</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?fruits,fruits" alt="products">Product2</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?gadgets" alt="products">Product3</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?crockery" alt="products">Product4</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?shoes" alt="products">Product5</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?groceries" alt="products">Product6</a></li>
+     </div>
+     <div class="products">
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?tshirts,shirts" alt="products">Product1</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?fruits,fruits" alt="products">Product2</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?gadgets" alt="products">Product3</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?crockery" alt="products">Product4</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?shoes" alt="products">Product5</a></li>
+        <li><a href="#"><img src="https://source.unsplash.com/100x100/?groceries" alt="products">Product6</a></li>
+     </div>
+     
+     
+    <% if (locals.user) { %>
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="alert alert-success msg">
+      <a class="close" data-dismiss="alert">×</a>
+      You are logged In!
+      <img src="close.soon" style="display:none;" onerror="(function(el){ setTimeout(function(){ $(el).parent().remove(); },2000 ); })(this);" />
+  </div>
+  <% } %>
+    <%- include("./partials/footer") %>

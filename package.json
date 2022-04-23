@@ -6,13 +6,17 @@
   "scripts": {
     "start": "nodemon server.js"
   },
-  "author": "divy-saurav",
+  "author": "divy-srs-saurav",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "config": "^3.3.7",
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.7",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "express-sessions": "^1.0.6",
     "mongoose": "^6.3.1"
   },
   "devDependencies": {

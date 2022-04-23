@@ -1,20 +1,5 @@
-<%- include("partials/header") %>
-    <!-- block for logo -->
-    <div class="left">
-        Logo
-    </div>
-    <!-- block for navbar  -->
-    <div class="right">
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Business Guide</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+<%- include("./partials/header") %>
+    
     <!-- block for slogan  -->
     <div class="slogan">
         <p>VOCAL
@@ -22,13 +7,18 @@
             <p>LOCAL</p>
         </p>
     </div>
-
-    <!-- block for login  -->
+    <% if (!locals.user) { %>
+        <!-- block for login  -->
     <div class="login">
         <!-- <button class="btn">Log In</button> -->
        <a href="/login0"> <button type="button" class="btn btn-dark">LogIn</button></a>
-       <br>
-        Don't have Account?<a href="/signup0">SignUP</a>
+      
     </div>
+    <div class="sign">
+    <p>Don't have Account?<a href="/signup0">SignUP</a></p>
+    </div>
+        
+    <% } %>
 
-    <%- include("partials/footer") %>
+    
+    <%- include("./partials/footer") %>

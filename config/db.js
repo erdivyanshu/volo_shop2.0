@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const db = config.get('mongoURI');
+var UserModel = require('../models/User');
 
 //asynchronous arrow function
 

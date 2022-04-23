@@ -1,0 +1,105 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    
+}
+.logo{
+    width: 30%;
+    display: flex;
+    /* justify-content: center;
+    align-items: left; */
+    text-align: left;
+    color: rgb(105, 10, 194);
+    text-decoration: none;
+    padding: 8px 35px;
+    font-size: 18px;
+    font-family: cursive;
+    margin: auto;
+}
+
+.list{
+    width: 70%;
+    text-align: right ;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    padding: 1px 9px;
+    position: sticky;
+}
+
+.list li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list li a{
+    color: rgb(105, 10, 194);
+    text-decoration: none;
+    padding: 8px 35px;
+    font-size: 18px;
+    font-family: cursive;
+    margin: auto;
+}
+.list li a:hover {
+    color: rgb(179, 0, 0);
+}
+.shopimg{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5%;
+    padding: 13px 13px;
+   }
+   .shopimg img{
+    
+    width: 20%;
+    border: 3px solid black;
+    border-radius: 50%;
+   } 
+   .products{
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       padding: 5px 5px;
+   }
+   .products li{
+    display: flex;
+    text-decoration: none;
+    padding: 5px 5px;
+   }
+   .products li a{
+       display: flex;
+       flex-direction: column;
+       text-decoration: none;
+       font-size: small;
+       font-weight: 400;
+       font-family: ubuntu,sans-serif;
+       color: black;
+   }
+   .products li a img{
+       width: 80%;
+       border: 2px solid rgb(105, 8, 8);
+       padding: 1px 1px;
+    }
+    /* .ftr {
+        display: inline-block;
+        position: absolute;
+        top: 800px;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        background-color: rgba(196, 159, 231, 0.893);
+        color: rgb(253, 255, 252);
+    } */
+    .left-box .content {
+        font-size: x-small;
+       
+    }
+    
+    .left-box h5 {
+        font-size: smaller;
+    }
