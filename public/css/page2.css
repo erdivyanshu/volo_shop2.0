@@ -82,8 +82,10 @@
     width: 100%;
     height: 50px;
     text-align: center;
+    padding: 5px;
     background-color: rgba(196, 159, 231, 0.893);
-    color: rgb(244, 233, 233);
+    color: rgb(49, 37, 26);
+    opacity: 70%;
 }
 
 .left-box .content {

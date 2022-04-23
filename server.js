@@ -47,10 +47,10 @@ app.use(express.static(__dirname + "/public"));
 //session data to local
 app.use(function (req, res, next) {
   res.locals.user = req.session.user;
-    res.locals.email=req.session.email;
-    res.locals.locality=req.session.locality;
-    res.locals.mobile=req.session.mobile;
-  
+  res.locals.email = req.session.email;
+  res.locals.locality = req.session.locality;
+  res.locals.mobile = req.session.mobile;
+
   next();
 
 });
@@ -63,15 +63,15 @@ app.get("/product", (req, res) => {
   res.render("product.ejs");
 });
 app.get("/shopfront", (req, res) => {
-  if(req.session.user)
-  res.render("shopfront.ejs");
-  else res.status(404).send( 'Not found');
+  if (req.session.user)
+    res.render("shopfront.ejs");
+  else res.status(404).send('Not found');
 });
 app.get("/profile", (req, res) => {
-  if(req.session.user)
-  res.render("profile.ejs");
-  else res.status(404).send( 'Not found');
-    
+  if (req.session.user)
+    res.render("profile.ejs");
+  else res.status(404).send('Not found');
+
 });
 app.get("/login0", (req, res) => {
   res.render("login0.ejs", {
@@ -101,33 +101,35 @@ app.get("/login", function (req, res) {
 });
 
 app.post("/login", async (req, res) => {
+  if (req.session.user) {
+    res.redirect('/shopfront');
 
-  const user = await UserModel.find({
-    email: req.body.email
-  })
+  } else {
+    let user = []
+    user = await UserModel.find({
+      email: req.body.email
+    })
 
-  let f=1;
-  if(!user)f=0;
 
-  if(f){
-  if (user[0].password == req.body.password) {
-    session = req.session;
-    session.user = user[0].name;
-    session.email = user[0].email;
-    session.locality = user[0].locality;
-    session.mobile = user[0].mobile;
-    u=user[0];
+    if (user.length) {
+      if (user[0].password == req.body.password) {
+        session = req.session;
+        session.user = user[0].name;
+        session.email = user[0].email;
+        session.locality = user[0].locality;
+        session.mobile = user[0].mobile;
 
-res.redirect('/shopfront');}
-    else {
+        res.redirect('/shopfront');
+      } else {
+        console.log("wrong password");
+        res.redirect('/login0');
+      }
+    } else {
+      console.log("wrong userid");
+
       res.redirect('/login0');
-  }}
-  else{
-    res.redirect('/login0');
-}
-
-
-
+    }
+  }
 });
 
 
@@ -156,7 +158,7 @@ app.post("/signup", (req, res) => {
     if (err) {
       console.log(error);
     } else {
-      res.send("Data inserted");
+      res.redirect('/login0');
     }
   });
 });
@@ -175,7 +177,7 @@ app.post("/AddProduct", (req, res) => {
     if (err) {
       console.log(error);
     } else {
-      res.send("Data inserted");
+      res.redirect('/shopfront');
     }
   });
 });
