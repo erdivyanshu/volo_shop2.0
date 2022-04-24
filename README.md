@@ -4,13 +4,13 @@
 
 
 ## Introduction:
-  offering local vendors an opportunity to compete with online retail gaints by displaying their products side-by-side
+  Offering local vendors an opportunity to compete with online retail gaints by displaying their products side-by-side
   
 ## Demo Video Link:
   <a href="https://youtu.be/dQw4w9WgXcQ">https://youtu.be/dQw4w9WgXcQ</a>
   
 ## Presentation Link:
-  <a href="https://cutt.ly/H365PPT"> PPT link here </a>
+  <a href="https://drive.google.com/file/d/19YRQJ4xGIG7AjNhHKGg-zL9UhgODKvHO/view?usp=sharing"> PPT link here </a>
   
   
 ## Table of Contents:
