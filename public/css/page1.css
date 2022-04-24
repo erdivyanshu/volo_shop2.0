@@ -17,6 +17,7 @@ body {
     padding: 13px 22px;
     font-size: 18px;
     font-family: cursive;
+    
 }
 
 .right {
@@ -139,3 +140,31 @@ body {
 .msg{
     margin-top: 50px;
 }
+.products1{
+    position: absolute;
+    top:800px;
+    left:160px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px;
+}
+.products1 li{
+ display: flex;
+ text-decoration: none;
+ padding: 5px 5px;
+}
+.products1 li a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    font-size: small;
+    font-weight: 400;
+    font-family: ubuntu,sans-serif;
+    color: black;
+}
+.products1 li a img{
+    width: 80%;
+    border: 2px solid rgb(105, 8, 8);
+    padding: 1px 1px;
+ }

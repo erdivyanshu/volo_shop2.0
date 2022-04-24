@@ -55,17 +55,32 @@ app.use(function (req, res, next) {
 
 });
 
-app.get("/", (req, res) => {
-  res.render("index.ejs");
+app.get("/", async(req, res) => {
+  let product = []
+    product = await ProductSchema.find()
+  res.render("index.ejs",{p:product});
 });
 
-app.get("/product", (req, res) => {
-  res.render("product.ejs");
+app.get('/product/:Pname', async(req,res)=>{
+  // req.route.query.tagId
+
+  let product = []
+    product = await ProductSchema.find({
+      Pname: req.params.Pname
+    })
+  res.render("product.ejs",{p:product[0]});
 });
-app.get("/shopfront", (req, res) => {
-  if (req.session.user)
-    res.render("shopfront.ejs");
-  else res.status(404).send('Not found');
+
+app.get("/shopfront", async(req, res) => {
+  if (req.session.user){
+    let product = []
+    product = await ProductSchema.find({
+      ShopOwner: req.session.user
+    })
+    // console.log(product);
+    res.render("shopfront.ejs",{p:product});
+  }
+  else res.status(404).send('Not logged in! Please <a href="/login0">LogIn</a> to view');
 });
 app.get("/profile", (req, res) => {
   if (req.session.user)
@@ -121,11 +136,11 @@ app.post("/login", async (req, res) => {
 
         res.redirect('/shopfront');
       } else {
-        console.log("wrong password");
+        // console.log("wrong password");
         res.redirect('/login0');
       }
     } else {
-      console.log("wrong userid");
+      // console.log("wrong userid");
 
       res.redirect('/login0');
     }
@@ -156,7 +171,7 @@ app.post("/signup", (req, res) => {
 
   user.save(function (err, data) {
     if (err) {
-      console.log(error);
+      // console.log(error);
     } else {
       res.redirect('/login0');
     }
@@ -175,7 +190,7 @@ app.post("/AddProduct", (req, res) => {
 
   product.save(function (err, data) {
     if (err) {
-      console.log(error);
+      // console.log(error);
     } else {
       res.redirect('/shopfront');
     }

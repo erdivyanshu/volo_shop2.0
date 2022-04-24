@@ -61,7 +61,7 @@ body {
     border-radius: 50%;
    } 
    .products{
-       display:flex;
+       display: flex;
        align-items: center;
        justify-content: center;
        padding: 5px 5px;

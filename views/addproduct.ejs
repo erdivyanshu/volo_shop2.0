@@ -1,18 +1,23 @@
 <%- include("./partials/header") %>
+<style>
+  .ftr{
+    top:600px;
+  }
+</style>
 <div class="Add">
   <h3><center>AddProduct</center></h3>
 <form action="/AddProduct" method="POST">
-  <label for="ShopOwner">ShopOwner Name.:</label><br />
+  <label for="ShopOwner">ShopOwner Name:</label><br />
   <input type="text" id="ShopOwner" name="ShopOwner" value="<%=locals.user%>"required readonly/><br /><br />
-  <label for="Pname">Product Name.:</label><br />
+  <label for="Pname">Product Name:</label><br />
   <input type="text" id="Pname" name="Pname" required /><br />
-   <label for="price">Price.:</label><br />
+   <label for="price">Price:</label><br />
   <input type="text" id="price" name="price" required /><br /><br />
   
-  <label for="dis">Add a description.:</label><br />
+  <label for="dis">Add a description:</label><br />
   <input type="text" id="dis" name="dis" required /><br /><br />
 
-  <input type="submit" value="Submit" />
+  <center><input type="submit" value="Submit" /></center>
 </form>
 </div>
 <%- include("./partials/footer") %>
