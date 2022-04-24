@@ -6,7 +6,7 @@ var ProductSchema = require("./models/product");
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
-let u;
+let li=0;
 
 const app = express();
 connectDB();
@@ -78,28 +78,40 @@ app.get("/shopfront", async(req, res) => {
       ShopOwner: req.session.user
     })
     // console.log(product);
-    res.render("shopfront.ejs",{p:product});
+    res.render("shopfront.ejs",{p:product ,li:li--});
   }
   else res.status(404).send('Not logged in! Please <a href="/login0">LogIn</a> to view');
 });
 app.get("/profile", (req, res) => {
   if (req.session.user)
     res.render("profile.ejs");
-  else res.status(404).send('Not found');
+  else res.status(404).send('Not logged in! Please <a href="/login0">LogIn</a> to view');
 
 });
 app.get("/login0", (req, res) => {
-  res.render("login0.ejs", {
-
-  });
+  if (req.session.user)
+    res.redirect("/shopfront");
+  else 
+  res.render("login0.ejs");
 });
+
 app.get("/signup0", (req, res) => {
   res.render("signup0.ejs", {
 
   });
 });
 app.get("/Addproduct0", (req, res) => {
+  if (req.session.user)
   res.render("addproduct.ejs");
+  else res.status(404).send('Not logged in! Please <a href="/login0">LogIn</a> to view');
+  
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact.ejs");
+});
+app.get("/marketing", (req, res) => {
+  res.render("marketing.ejs");
 });
 app.get('/logout', (req, res) => {
   req.session.destroy();
@@ -116,10 +128,13 @@ app.get("/login", function (req, res) {
 });
 
 app.post("/login", async (req, res) => {
+
   if (req.session.user) {
     res.redirect('/shopfront');
 
   } else {
+    li=1;
+
     let user = []
     user = await UserModel.find({
       email: req.body.email

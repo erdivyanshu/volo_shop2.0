@@ -1,0 +1,59 @@
+<%- include("./partials/header") %>
+<br><br>
+<div class="container">
+    <div class="h2 text-center p-3">Contact-Us</div> <hr>
+   <p>
+     <h3>Team noobster2.0</h3>
+     <h5>Email : </h5>
+       erdivyanshu.work@gmail.com
+     <h5>Address: </h5>
+       MNNIT ALLAHABAD,211004,UP<br></p>
+       <div class="map-wrapper">
+     <iframe class="googlemap"src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14405.563172400643!2d81.8639163!3d25.4920102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6690dd2de3a1415b!2sMotilal%20Nehru%20National%20Institute%20of%20Technology%2C%20Allahabad!5e0!3m2!1sen!2sin!4v1621372258495!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="fast" alt="Google-Map"></iframe>
+       </div>
+    </div>
+   
+   <!--Contact-us form start here-->
+   
+    <div class="container p-3 mb-2 border">
+        <div class="h2" align="center">
+            Mail Your Query
+        </div><hr>
+   
+    <form action="/contact" method="post">
+      
+       <div class="form-group">
+         <label for="exampleFormControlInput1">Email address</label>
+         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+       </div>
+       <div class="form-group">
+         <label for="exampleFormControlSelect1">Select Your Locality</label>
+         <select class="form-control" id="exampleFormControlSelect1" name="need">
+           <option>Select Anyone</option>
+           <option>Teliyarganj</option>
+           <option>Govindpura</option>
+           <option>Phaphamau</option>
+             <option>Civil-lines</option>
+           <option>Katra-Market</option>
+         </select>
+       </div>
+       <div class="form-group">
+         <label for="exampleFormControlTextarea1">Write Your Query</label>
+         <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"placeholder="Write Your Text"></textarea>
+       </div>
+       <button class="btn btn-outline-primary">Submit</button>
+     </form>
+   
+   </div>
+   
+   <!--Contact-us form end here-->
+   
+   
+   <!-- Footer design -->
+    
+   <div class="container-fluid>
+     <p class="float-right">
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+         <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+       </svg></a></p></div>
+       <%- include("./partials/footer") %>

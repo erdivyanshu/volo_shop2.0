@@ -51,7 +51,7 @@
    
 <div class="products<%current-1%>">
   <% var i=9; while(i>0 && current>0) {%>
-   <li><a href="/product/<%=p[current-1].Pname%>"><img src="https://source.unsplash.com/100x100/?groceries" alt="products"><%=p[current-1].Pname%><br>RS-<%=p[current-1].price%></a></li>
+   <li><a href="/product/<%=p[current-1].Pname%>"><img src="https://source.unsplash.com/100x100/?<%=p[current-1].Pname%>" alt="products"><%=p[current-1].Pname%><br>RS-<%=p[current-1].price%></a></li>
   <%i--;current--;}%></div></br>
     <%};%></div>
     <%- include("./partials/footer") %>
