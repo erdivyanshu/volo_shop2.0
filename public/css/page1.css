@@ -4,7 +4,7 @@ body {
     background-image: url('../img/land-01.png');
     background-size: cover;
     background-position: centre;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
 
 .left {

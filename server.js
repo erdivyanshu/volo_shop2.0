@@ -3,9 +3,11 @@ var bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 var UserModel = require("./models/User");
 var ProductSchema = require("./models/product");
+var ContactSchema = require("./models/contact");
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
+const flash=require('connect-flash');
 let li=0;
 
 const app = express();
@@ -33,6 +35,7 @@ app.use(sessions({
   resave: false
 }));
 
+app.use(flash());
 
 //setting static data path
 app.use(express.static(__dirname + "/public"));
@@ -91,8 +94,9 @@ app.get("/profile", (req, res) => {
 app.get("/login0", (req, res) => {
   if (req.session.user)
     res.redirect("/shopfront");
-  else 
-  res.render("login0.ejs");
+  else {
+    req.flash('message','Please!Input Correct Credentials!');
+    res.render("login0.ejs",{message:flash('message')});}
 });
 
 app.get("/signup0", (req, res) => {
@@ -152,6 +156,7 @@ app.post("/login", async (req, res) => {
         res.redirect('/shopfront');
       } else {
         // console.log("wrong password");
+        req.flash('message','Please!Input Correct Credentials!');
         res.redirect('/login0');
       }
     } else {
@@ -192,6 +197,9 @@ app.post("/signup", (req, res) => {
     }
   });
 });
+
+// add product
+
 app.get("/AddProduct", function (req, res) {
   res.render("form");
 });
@@ -208,6 +216,28 @@ app.post("/AddProduct", (req, res) => {
       // console.log(error);
     } else {
       res.redirect('/shopfront');
+    }
+  });
+});
+
+//CONTACT US
+
+app.get("/contact", function (req, res) {
+  res.render("form");
+});
+app.post("/contact", (req, res) => {
+
+  var contact = new ContactSchema();
+  contact.nameC = req.body.nameC;
+  contact.emailC = req.body.emailC;
+  contact.localityC = req.body.localityC;
+  contact.queryC = req.body.queryC;
+
+  contact.save(function (err, data) {
+    if (err) {
+      // console.log(error);
+    } else {
+      res.redirect('/contact');
     }
   });
 });
