@@ -269,4 +269,4 @@ app.get("/search/:key", async(req,res)=>{
 const port = 5000; // Port we will listen on
 
 // Function to listen on the port
-app.listen(port, () => console.log(`This app is listening on port ${port}`));
+app.listen(port, () => console.log(`This app is listening on port ${port} http://localhost:${port}/`));
