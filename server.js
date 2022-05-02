@@ -175,7 +175,6 @@ app.get("/signup", function (req, res) {
 });
 
 app.post("/signup", (req, res) => {
-  // Insert Login Code Here
   let name0 = req.body.name;
   let password0 = req.body.password;
   let email0 = req.body.email;
@@ -245,22 +244,22 @@ app.post("/contact", (req, res) => {
 
 
 //search route
-app.get("/search", (req, res) => {
-  res.render("search.ejs");
-});
+// app.get("/search", (req, res) => {
+//   res.render("search.ejs");
+// });
 //search bar
 // app.get("/signup", function (req, res) {
 //   res.render("form");
 // });
-app.get("/search/:key", async(req,res)=>{
+app.get("/search", async(req,res)=>{
   //console.log(req.params.Pname)
   let product = await ProductSchema.find(
     {
       "$or":[
-        { "Pname":{$regex:req.params.key}},
-        { "price":{$regex:req.params.key}}
+        { "Pname":{$regex:req.query.key}},
+        { "price":{$regex:req.query.key}}
       ]
-    })
+    });
     //res.send(product);
     res.render("search.ejs",{p:product ,li:li--});
 });
