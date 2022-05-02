@@ -242,6 +242,30 @@ app.post("/contact", (req, res) => {
   });
 });
 
+
+
+//search route
+app.get("/search", (req, res) => {
+  res.render("search.ejs");
+});
+//search bar
+// app.get("/signup", function (req, res) {
+//   res.render("form");
+// });
+app.get("/search/:key", async(req,res)=>{
+  //console.log(req.params.Pname)
+  let product = await ProductSchema.find(
+    {
+      "$or":[
+        { "Pname":{$regex:req.params.key}},
+        { "price":{$regex:req.params.key}}
+      ]
+    })
+    //res.send(product);
+    res.render("search.ejs",{p:product ,li:li--});
+});
+
+
 const port = 5000; // Port we will listen on
 
 // Function to listen on the port

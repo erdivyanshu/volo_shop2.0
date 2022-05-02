@@ -1,0 +1,40 @@
+<%- include("./partials/header") %>
+<style>
+   
+    .ftr{
+        bottom:0%;
+    }
+    .pr{
+        position: absolute;
+        top:100px;
+        font-size: x-large;
+        left: 50%;
+        font-weight: 700;
+        text-align: center;
+        border:2px solid rgba(209, 134, 36, 0.91);
+        box-sizing: content-box;
+        border-width: 5px;
+       
+        background-color: bisque;
+    }
+    .pr p{
+        display: flex;
+        align-self: center;
+    }
+</style>
+<div class="pr" id="pr"><p>PRODUCTS</p>
+    <% var current = p.length; %>
+ <% while (current > 0){%>
+    
+ <div class="products<%current-1%>">
+   <% var i=9; while(i>0 && current>0) {%>
+    <li><a href="/product/<%=p[current-1].Pname%>"><img src="https://source.unsplash.com/100x100/?<%=p[current-1].Pname%>" alt="products"><%=p[current-1].Pname%><br>RS-<%=p[current-1].price%></a></li>
+   <%i--;current--;}%></div></br>
+     <%};%></div>
+
+
+
+
+
+
+<%- include("./partials/footer") %>
