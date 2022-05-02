@@ -22,6 +22,7 @@
   3) Express
   4) Bootstrap
   5) HTML/CSS/JS
+  6) EJS as Templating Engine
   
 
 ## Contributors:
