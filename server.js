@@ -242,15 +242,8 @@ app.post("/contact", (req, res) => {
 });
 
 
-
 //search route
-// app.get("/search", (req, res) => {
-//   res.render("search.ejs");
-// });
-//search bar
-// app.get("/signup", function (req, res) {
-//   res.render("form");
-// });
+
 app.get("/search", async(req,res)=>{
   //console.log(req.params.Pname)
   let product = await ProductSchema.find(
