@@ -8,6 +8,10 @@ const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const flash=require('connect-flash');
+const index=require("./routes/index");
+const product1=require("./routes/product");
+const other=require("./routes/product");
+
 let li=0;
 
 const app = express();
@@ -58,12 +62,12 @@ app.use(function (req, res, next) {
 
 });
 
-app.get("/", async(req, res) => {
-  let product = []
-    product = await ProductSchema.find()
-  res.render("index.ejs",{p:product});
-});
+//index route setup
+app.use("/",index);
+app.use("/contact",index);
+app.use("/marketing",index);
 
+// app.use('/product',product1);
 app.get('/product/:Pname', async(req,res)=>{
   // req.route.query.tagId
 
@@ -85,6 +89,7 @@ app.get("/shopfront", async(req, res) => {
   }
   else res.status(404).send('Not logged in! Please <a href="/login0">LogIn</a> to view');
 });
+
 app.get("/profile", (req, res) => {
   if (req.session.user)
     res.render("profile.ejs");
@@ -111,12 +116,7 @@ app.get("/Addproduct0", (req, res) => {
   
 });
 
-app.get("/contact", (req, res) => {
-  res.render("contact.ejs");
-});
-app.get("/marketing", (req, res) => {
-  res.render("marketing.ejs");
-});
+
 app.get('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
@@ -265,7 +265,7 @@ app.get("/search", async(req,res)=>{
 });
 
 
-const port = 5000; // Port we will listen on
+const port = 5001; // Port we will listen on
 
 // Function to listen on the port
 app.listen(port, () => console.log(`This app is listening on port ${port} http://localhost:${port}/`));
