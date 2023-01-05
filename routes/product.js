@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 var express = require('express');
 var router = express.Router();
 var ProductSchema = require("../models/product");
-=======
-const connectDB = require("../config/db");
-var ProductSchema = require("../models/product");
-const bcrypt = require("bcrypt");
->>>>>>> 867de2d33f79c398054562488f39269e59ba7ed7
 
 router.get('/product/:Pname', async(req,res)=>{
     // req.route.query.tagId
