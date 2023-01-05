@@ -1,6 +1,6 @@
-const connectDB = require("./config/db");
-var UserModel = require("./models/User");
-const bcrypt = require("bcrypt");
+var express = require('express');
+var router = express.Router();
+var ProductSchema = require("../models/product");
 
 
 app.get("/login", function (req, res) {
