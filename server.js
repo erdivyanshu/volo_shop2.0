@@ -9,8 +9,8 @@ const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const flash=require('connect-flash');
 const index=require("./routes/index");
-const product1=require("./routes/product");
-const other=require("./routes/product");
+const products=require('./routes/product');
+const login=require('./routes/login');
 
 let li=0;
 
@@ -66,17 +66,17 @@ app.use(function (req, res, next) {
 app.use("/",index);
 app.use("/contact",index);
 app.use("/marketing",index);
+app.use('/product',products);
+//app.use('/login0',login);
+// app.get('/product/:Pname', async(req,res)=>{
+//   // req.route.query.tagId
 
-// app.use('/product',product1);
-app.get('/product/:Pname', async(req,res)=>{
-  // req.route.query.tagId
-
-  let product = []
-    product = await ProductSchema.find({
-      Pname: req.params.Pname
-    })
-  res.render("product.ejs",{p:product[0]});
-});
+//   let product = []
+//     product = await ProductSchema.find({
+//       Pname: req.params.Pname
+//     })
+//   res.render("product.ejs",{p:product[0]});
+// });
 
 app.get("/shopfront", async(req, res) => {
   if (req.session.user){

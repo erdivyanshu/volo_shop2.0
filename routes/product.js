@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ProductSchema = require("../models/product");
 
-router.get('/product/:Pname', async(req,res)=>{
+router.get('/:Pname', async(req,res)=>{
     // req.route.query.tagId
   
     let product = []
