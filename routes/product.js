@@ -1,5 +1,5 @@
-const connectDB = require("./config/db");
-var ProductSchema = require("./models/product");
+const connectDB = require("../config/db");
+var ProductSchema = require("../models/product");
 const bcrypt = require("bcrypt");
 
 app.get("/AddProduct", function (req, res) {
