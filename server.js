@@ -12,9 +12,13 @@ const index=require("./routes/index");
 const products=require('./routes/product');
 const login=require('./routes/login');
 
+const cors = require('cors');
+
 let li=0;
 
 const app = express();
+app.use(cors());
+
 connectDB();
 
 //setting view engine
@@ -49,9 +53,6 @@ app.use(express.static(__dirname + "/public"));
 //   res.status(404).send( 'Not found');
 // });
 
-app.get('/', async (req, res) => {
-  res.send('Hello World!');
-});
 
 
 //session data to local
@@ -66,7 +67,7 @@ app.use(function (req, res, next) {
 });
 
 //index route setup
-// app.use("/",index);
+app.use("/",index);
 app.use("/contact",index);
 app.use("/marketing",index);
 app.use('/product',products);
@@ -265,4 +266,3 @@ const port = 3000 // Port we will listen on
 
 // Function to listen on the port
 app.listen(port, () => console.log(`This app is listening on port ${port} http://localhost:${port}/`));
-// st
