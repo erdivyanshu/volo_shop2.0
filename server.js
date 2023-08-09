@@ -49,6 +49,9 @@ app.use(express.static(__dirname + "/public"));
 //   res.status(404).send( 'Not found');
 // });
 
+app.get('/', async (req, res) => {
+  res.send('Hello World!');
+});
 
 
 //session data to local
@@ -63,7 +66,7 @@ app.use(function (req, res, next) {
 });
 
 //index route setup
-app.use("/",index);
+// app.use("/",index);
 app.use("/contact",index);
 app.use("/marketing",index);
 app.use('/product',products);
