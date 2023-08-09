@@ -1,4 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://JOBLELO:kL5AzgHMKdTUQrNv@cluster1.wqoar.mongodb.net/?retryWrites=true&w=majority",
+    "mongoURI":"mongodb+srv://robot:1d2a3n4k@mernlearning.9n0jc.mongodb.net/mernLearning?retryWrites=true",
     "jwtSecret":"mysecrettoken"
 }
